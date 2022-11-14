@@ -12,7 +12,7 @@ int[,] array = new int[5, 4];
 NewArray(array);
 PrintArray(array);
 Console.WriteLine();
-MinSumNumberLine(array);
+MinSumNumberRow(array);
 
 
 int[,] NewArray(int[,] array)
@@ -37,7 +37,7 @@ void PrintArray(int[,] array)
         Console.WriteLine();
     }
 }
-void MinSumNumberLine(int[,] arr)
+void MinSumNumberRow(int[,] arr)
 {
     int indexFirstRow = 0;
     int firstRowSum = 0;
