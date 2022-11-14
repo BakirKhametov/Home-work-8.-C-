@@ -8,7 +8,7 @@
 // Программа считает сумму элементов в каждой строке и выдаёт номер строки с наименьшей суммой элементов:
 // 1 строка
 
-int[,] array = new int[3, 4];
+int[,] array = new int[5, 4];
 NewArray(array);
 PrintArray(array);
 Console.WriteLine();
@@ -39,12 +39,13 @@ void PrintArray(int[,] array)
 }
 void MinSumNumberLine(int[,] arr)
 {
-    int minRow = 0;
+    int indexFirstRow = 0;
+    int firstRowSum = 0;
     int index = 0;
     int sumNumbersRow = 0;
-    for (int i = 0; i < arr.GetLength(1); i++)
+    for (int j = 0; j < arr.GetLength(1); j++)
     {
-        minRow += arr[0, i];
+        firstRowSum += arr[indexFirstRow, j];
     }
     for (int i = 0; i < arr.GetLength(0); i++)
     {
@@ -52,16 +53,15 @@ void MinSumNumberLine(int[,] arr)
             sumNumbersRow += arr[i, j];
             Console.WriteLine($"Сумма элементов строки - {sumNumbersRow} ");
             
-        if (sumNumbersRow < minRow)
+        if (sumNumbersRow < firstRowSum)
         {
-            minRow = sumNumbersRow;
+            firstRowSum = sumNumbersRow;
             index = i;
         }
         sumNumbersRow = 0;
     }
     Console.WriteLine();
-    Console.Write($"Номер строки с наименьшей суммой элементов - {index + 1} ");
-    
+    Console.Write($"Номер строки с наименьшей суммой элементов - {index + 1} ");  
 }
 
 
